@@ -10,14 +10,15 @@ services:
       - db_data:/var/lib/postgresql/data
 
 pgadmin:
-    image: dpage/pgadmin4:8
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@local.test
-      PGADMIN_DEFAULT_PASSWORD: admin
-    ports:
-      - "5051:80"   # <-- change 5050 en 5051 (format: HOST:CONTAINER)
-    depends_on:
-      - db
+  image: dpage/pgadmin4:8
+  environment:
+    PGADMIN_DEFAULT_EMAIL: admin@local.test
+    PGADMIN_DEFAULT_PASSWORD: admin
+  ports:
+    - "5052:80"
+  depends_on:
+    - db
+
     
 volumes:
   db_data:
