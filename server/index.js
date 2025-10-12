@@ -100,4 +100,6 @@ app.post("/actions", auth, async (req, res) => {
 });
 
 const port = process.env.PORT || 4000;
-app.listen(port, () => console.log("API ready on :" + port));
+const port = process.env.PORT || 3002;
+const host = '0.0.0.0'; // écoute sur toutes les interfaces (LAN)
+app.listen(port, host, () => console.log(`API ViviCity on http://${host}:${port}`));
